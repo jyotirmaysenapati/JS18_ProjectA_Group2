@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
+  <link href="vendor/css/bootstrap.css" rel="stylesheet">
+  <link href="app/css/app.css" rel="stylesheet">
+  <script src="vendor/js/angular.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body ng-controller="baseCtrl">
+  <div id="content">
+    <div id="selectBox">
+      <select  class="form-control">
+        <option value="">Choose dataset</option>
+        <option value="1">Dataset 1</option>
+        <option value="2">Dataset 2</option>
+      </select>
+    </div>
+
+      <div id="userInput">
+        <textarea cols="100" rows="2" ng-model="userInput" placeholder="Type a sentence to plot a curve">
+        </textarea>
+      </div>
+      <div id="buttons">
+        <button id="plotButton" type="button" ng-click="plot()" class="btn btn-success"> Plot </button>
+        <button id="resetButton" type="button" ng-click="reset()" class="btn btn-danger"> Reset </button>
+      </div>
+
+    
+    <div>
+      <div id="plotTitle" ng-if="displayTitle">{{plotTitle}}</div>
+      <div id="plot"></div>
+    </div>
+  </div>
+</body>
+<script src="app/js/app.js"></script>
+<script src="app/js/controllers/baseCtrl.js"></script>
+</html>
