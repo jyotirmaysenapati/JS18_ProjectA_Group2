@@ -11,7 +11,7 @@
     "build:ui": "ng build",
     "test:ui": "ng test",
     "start:nlp": "node nlp.server.js",
-    "start": "concurrently \"npm run server\" \"npm run ui\""
+    "start": "concurrently \"npm run server\" \"npm run ui\" \"npm run start:nlp\""
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
